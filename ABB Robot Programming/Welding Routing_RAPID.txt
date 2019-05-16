@@ -1,0 +1,43 @@
+MODULE Module1
+	CONST robtarget Target_10:=[[1536.576556246,3.869682319,198.770937231],[0.237551598,0.2611991,-0.93374636,0.058838794],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_20:=[[1610.262431772,-118.519517981,196.739917302],[0.237551598,0.2611991,-0.93374636,0.058838794],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_30:=[[1635.06425627,-103.151208524,181.020759767],[0.237551598,0.2611991,-0.93374636,0.058838794],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_40:=[[1665.177493119,-108.87059946,168.415646466],[0.237551598,0.2611991,-0.93374636,0.058838794],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_50:=[[1712.786308837,-79.707904703,138.33144096],[0.237551598,0.2611991,-0.93374636,0.058838794],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_60:=[[1744.603044356,-16.849387742,106.697958569],[0.237551598,0.2611991,-0.93374636,0.058838794],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_70:=[[1800.020788346,-69.266593363,94.636232832],[0.237551598,0.2611991,-0.93374636,0.058838794],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_80:=[[1864.931500786,-29.505652771,53.618887974],[0.237551598,0.2611991,-0.93374636,0.058838794],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_90:=[[1761.783117483,141.819557854,56.46198946],[0.237551598,0.2611991,-0.93374636,0.058838794],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_100:=[[1536.576556246,3.869682319,198.770937231],[0.237551598,0.2611991,-0.93374636,0.058838794],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+        CONST robtarget Target_110:=[[1573.94382832,26.42268631,282.790606684],[0.237551462,0.261199153,-0.933746385,0.058838711],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+
+	! This function starts welding the work object
+    PROC Weld()
+	    MoveL Target_10,v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+	    MoveL Target_20,v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+	    MoveC Target_30,Target_40,v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+	    MoveL Target_50,v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+	    MoveC Target_60,Target_70,v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+	    MoveL Target_80,v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+	    MoveL Target_90,v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+	    MoveL Target_100,v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+            MoveL Target_110,v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+            
+	    WaitTime 3; ! Waits 3 second to place another work object
+            Weld_Next; ! Calls the function to weld the next workobject
+	    ENDPROC
+    
+    ! This function starts welding the next work object
+    PROC Weld_Next()
+            MoveL offs(Target_10,0,0,30),v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+	    MoveL offs(Target_20,0,0,30),v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+	    MoveC offs(Target_30,0,0,30), offs(Target_40,0,0,30),v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+	    MoveL offs(Target_50,0,0,30),v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+	    MoveC offs(Target_60,0,0,30), offs(Target_70,0,0,30),v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+	    MoveL offs(Target_80,0,0,30),v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+	    MoveL offs(Target_90,0,0,30),v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+	    MoveL offs(Target_100,0,0,30),v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+            MoveL offs(Target_110,0,0,30),v80,z0,Weldgun\WObj:=Wobj_CurveThing;
+    ENDPROC
+        
+ENDMODULE
